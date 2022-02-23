@@ -57,6 +57,9 @@ public class NQueens {
 					board[currentRow][currentColumn] = '*';
 					queensPlaced--;
 				}
+				
+				
+				
 			}
 		}
 	}

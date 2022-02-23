@@ -1,6 +1,8 @@
 package lecture_examples;
 
 public class BinarySearchWithHelperMethod {
+
+	
 	
 	public static int binarySearch(int[] list, int key) {
 		int low = 0;
@@ -8,7 +10,7 @@ public class BinarySearchWithHelperMethod {
 		return binarySearch(list, key, low, high);
 	}
 	
-	//Recursive helper method.
+
 	private static int binarySearch(int[] list, int key, int low, int high) {
 		if (low > high) { // The list has been exhausted without a match
 			return -low - 1;

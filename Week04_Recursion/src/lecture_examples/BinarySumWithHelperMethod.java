@@ -2,7 +2,7 @@ package lecture_examples;
 
 public class BinarySumWithHelperMethod {
 	public static void main(String[] args) {
-
+		
 	}
 
 	public static int binarySum(int[] list) {
