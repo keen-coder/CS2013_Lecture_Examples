@@ -83,12 +83,12 @@ public class NQueens {
 			}
 		}
 		
-		//Check the lower major diagonal
-		for (int i = row, j = col ; i < board.length && j < board[row].length ; ++i, ++j) {
-			if (board[i][j] == 'Q') {
-				return false;
-			}
-		}
+//		//Check the lower major diagonal
+//		for (int i = row, j = col ; i < board.length && j < board[row].length ; ++i, ++j) {
+//			if (board[i][j] == 'Q') {
+//				return false;
+//			}
+//		}
 		
 		//Check the upper minor diagonal
 		for (int i = row, j = col ; i >= 0 && j < board[row].length ; --i, ++j) {
@@ -97,12 +97,12 @@ public class NQueens {
 			}
 		}
 		
-		//Check the lower minor diagonal
-		for (int i = row, j = col ; i < board.length && j >= 0 ; ++i, --j) {
-			if (board[i][j] == 'Q') {
-				return false;
-			}
-		}
+//		//Check the lower minor diagonal
+//		for (int i = row, j = col ; i < board.length && j >= 0 ; ++i, --j) {
+//			if (board[i][j] == 'Q') {
+//				return false;
+//			}
+//		}
 		
 		return true;
 	}
