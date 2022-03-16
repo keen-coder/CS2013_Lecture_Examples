@@ -12,7 +12,70 @@ public class LinkedList<E> {
 	}
 	
 	public LinkedList(E ... values) {
-		//Add each value to the list
+		for(E value : values) {
+			this.addLast(value);
+		}
+	}
+	
+	public void insert(int index, E value) {
+		if (index < 0  || index > this.size) {
+			throw new IndexOutOfBoundsException("ERROR: Index value is out of bounds.");
+		}
+		
+		if (index == 0) {
+			this.addFirst(value);
+		}
+		else if(index == this.size) {
+			this.addLast(value);
+		}
+		else {
+			Node<E> temp = new Node<>(value);
+			Node<E> current = this.head;
+			int currentIndex = 0;
+			
+			while (currentIndex < (index - 1)) {
+				current = current.next;
+				currentIndex++;
+			}
+			
+			temp.next = current.next;
+			current.next = temp;
+			
+			this.size++;
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+	public void addLast(E value) {
+		Node<E> temp = new Node<>(value);
+		
+		if (this.isEmpty()) {
+			this.head = this.tail = temp;
+		}
+		else {
+			this.tail.next = temp;
+			this.tail = temp;
+		}
+		
+		this.size++;
 	}
 	
 	public void addFirst(E value) {
@@ -27,6 +90,22 @@ public class LinkedList<E> {
 		}
 		
 		this.size++;
+	}
+	
+	public E get(int index) throws IndexOutOfBoundsException {
+		if (index < 0  || index >= this.size) {
+			throw new IndexOutOfBoundsException("ERROR: Index value is out of bounds.");
+		}
+		
+		int currentIndex = 0;
+		Node<E> current = this.head;
+		
+		while(currentIndex != index) {
+			current = current.next;
+			currentIndex++;
+		}
+		
+		return current.data;
 	}
 	
 	public boolean isEmpty() {
