@@ -18,6 +18,76 @@ public class LinkedList<E> {
 			this.addLast(value);
 		}
 	}
+	
+	public void delete(int index) {
+		if (this.isEmpty()) {
+			throw new IllegalStateException("List is Empty.");
+		}
+		
+		if (index < 0 || index >= this.size) {
+			throw new IndexOutOfBoundsException("ERROR index " + index + " is out of bounds.");
+		}
+		
+		if (index == 0) {
+			this.deleteFirst();
+		}
+		else if (index == this.size - 1) {
+			this.deleteLast();
+		}
+		else {
+			Node<E> previous = this.head;
+			int currentIndex = 0;
+			
+			while(currentIndex < index - 1) {
+				previous = previous.next;
+				currentIndex++;
+			}
+			
+			previous.next = previous.next.next;
+			
+			this.size--;
+		}
+		
+	}
+	
+	public void deleteLast() {
+		if (this.isEmpty()) {
+			throw new IllegalStateException("List is Empty.");
+		}
+		
+		if (this.size == 1) {
+			this.head = this.tail = null;
+		}
+		else {
+			Node<E> current = this.head;
+			Node<E> previous = this.head;
+			
+			while(current.next != null) {
+				previous = current;
+				current = current.next;
+			}
+			
+			previous.next = null;
+			this.tail = previous;
+		}
+		
+		this.size--;
+	}
+	
+	public void deleteFirst() {
+		if (this.isEmpty()) {
+			throw new IllegalStateException("List is Empty.");
+		}
+		
+		if (this.size == 1) {
+			this.head = this.tail = null;
+		}
+		else {
+			this.head = this.head.next;
+		}
+		
+		this.size--;
+	}
 
 	public void addFirst(E value) {
 		Node<E> newNode = new Node<E>(value);

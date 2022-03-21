@@ -6,6 +6,37 @@ import section01_02.linked_list.Node;
 public class LinkedListTester {
 
 	public static void main(String[] args) {
+		LinkedList<Integer> list = new LinkedList<>(1, 2, 3, 4, 5, 6, 7);
+		
+		System.out.println(list);
+		list.delete(4);
+		System.out.println(list);
+		list.delete(1);
+		System.out.println(list);
+		
+		
+		
+//		Node<Integer> n1 = new Node<>(10);
+//		Node<Integer> n2 = new Node<>(20);
+//		
+//		n1.next = n2;
+//		
+//		Node<Integer> current = n1;
+//		System.out.println(current);
+//		
+//		current = current.next;
+//		
+//		System.out.println(current);
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
 //		Node<Integer> n1 = new Node<>(10);
 //		Node<Integer> n2 = new Node<>(20);
 //		Node<Integer> n3 = new Node<>(30);
@@ -38,12 +69,12 @@ public class LinkedListTester {
 //		System.out.println(test.get(0));
 //		System.out.println(test.get(1));
 		
-		LinkedList<Integer> test = new LinkedList<>(10, 20, 30, 40, 50);
-		
-		test.insert(1, 15);
-		test.insert(5, 45);
-		
-		System.out.println(test);
+//		LinkedList<Integer> test = new LinkedList<>(10, 20, 30, 40, 50);
+//		
+//		test.insert(1, 15);
+//		test.insert(5, 45);
+//		
+//		System.out.println(test);
 		
 		
 
