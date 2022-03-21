@@ -13,5 +13,4 @@ public class Node<E> {
 	public String toString() {
 		return this.data.toString();
 	}
-
 }
