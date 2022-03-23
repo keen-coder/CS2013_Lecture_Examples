@@ -17,6 +17,75 @@ public class LinkedList<E> {
 		}
 	}
 	
+	public void delete(int index) {
+		if (this.isEmpty()) {
+			throw new IllegalStateException("List is empty.");
+		}
+		
+		if(index < 0 || index >= this.size) {
+			throw new IndexOutOfBoundsException("Index out of bounds");
+		}
+		
+		if (index == 0) {
+			this.deleteFirst();
+		}
+		else if (index == this.size - 1) {
+			this.deleteLast();
+		}
+		else {
+			int currentIndex = 0;
+			Node<E> current = this.head;
+			
+			while(currentIndex < (index - 1)) {
+				current = current.next;
+				currentIndex++;
+			}
+			
+			current.next = current.next.next;
+			this.size--;
+		}
+
+	}
+	
+	public void deleteLast() {
+		if (this.isEmpty()) {
+			throw new IllegalStateException("List is Empty");
+		}
+		
+		if (this.size == 1) {
+			this.head = this.tail = null;
+		}
+		else {
+			Node<E> current = this.head;
+			Node<E> previous = this.head;
+			
+			while(current.next != null) {
+				previous = current;
+				current = current.next;
+			}
+			
+			previous.next = null;
+			this.tail = previous;
+		}
+		
+		this.size--;
+	}
+	
+	public void deleteFirst() {
+		if (this.isEmpty()) {
+			throw new IllegalStateException("List is empty");
+		}
+		
+		if (this.size == 1) {
+			this.head = this.tail = null;
+		}
+		else {
+			this.head = this.head.next;
+		}
+		
+		this.size--;
+	}
+	
 	public void insert(int index, E value) {
 		if (index < 0 || index > this.size) {
 			throw new IndexOutOfBoundsException("ERROR");
@@ -92,9 +161,17 @@ public class LinkedList<E> {
 		return this.head == null && this.tail == null && this.size == 0;
 	}
 	
+	public int size() {
+		return this.size;
+	}
 	
 	@Override
 	public String toString() {
+		if (this.isEmpty()) {
+			return "[EMPTY]";
+		}
+		
+		
 		StringBuilder sb = new StringBuilder();
 		
 		Node<E> current = this.head;

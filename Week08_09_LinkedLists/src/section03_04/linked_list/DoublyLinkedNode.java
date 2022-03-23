@@ -1,13 +1,12 @@
-package section09_10.linked_list;
+package section03_04.linked_list;
 
-public class Node<E> {
-	protected E data;
+public class DoublyLinkedNode<E> {
+	public E data;
 	public Node<E> next;
 	public Node<E> prev;
 	
-	public Node(E data) {
+	public DoublyLinkedNode(E data) {
 		this.data = data;
-		this.next = null;
 	}
 	
 	@Override

@@ -1,24 +1,44 @@
 package section05_06.tester;
 
+import java.util.Random;
+
 import section05_06.linked_list.LinkedList;
 
 public class LinkedListTester {
 	
 	public static void main(String[] args) {
-		testAddFirst();
-		System.out.println();
-		testAddLast();
-		System.out.println();
-		testGet();
-		System.out.println();
+//		testAddFirst();
+//		System.out.println();
+//		testAddLast();
+//		System.out.println();
+//		testGet();
+//		System.out.println();
+//		
+//		LinkedList<Integer> list = new LinkedList<>(10, 20, 30, 40, 50);
+//		list.insert(1, 15);
+//		list.insert(3, 25);
+//		list.insert(5, 35);
+//		list.insert(7, 45);
+//		
+//		System.out.println(list);
 		
-		LinkedList<Integer> list = new LinkedList<>(10, 20, 30, 40, 50);
-		list.insert(1, 15);
-		list.insert(3, 25);
-		list.insert(5, 35);
-		list.insert(7, 45);
+		LinkedList<String> list = new LinkedList<>("blue", "black", "red", "green", "magenta", "orange");
 		
-		System.out.println(list);
+		System.out.println("Original: " + list);
+		
+		Random r = new Random();
+		
+		while(!list.isEmpty()) {
+			int rIndex = r.nextInt(list.size());
+			list.delete(rIndex);
+			System.out.println("Delete index " + rIndex + ": " + list);
+		}
+		
+		
+		
+		
+		
+		
 	}
 	
 	public static void testGet() {

@@ -1,5 +1,7 @@
 package section03_04.tester;
 
+import java.util.Random;
+
 import section03_04.linked_list.LinkedList;
 
 public class LinkedListTester {
@@ -12,15 +14,29 @@ public class LinkedListTester {
 //		testGet();
 //		System.out.println();
 //		testInsertException();
+//		
+//		LinkedList<Integer> test = new LinkedList<>(10, 20, 30, 40, 50);
+//		
+//		test.insert(1, 15);
+//		test.insert(3, 25);
+//		test.insert(5, 35);
+//		test.insert(7, 45);
+//		
+//		System.out.println(test);
 		
-		LinkedList<Integer> test = new LinkedList<>(10, 20, 30, 40, 50);
+		LinkedList<String> list = new LinkedList<>("blue", "red", "green", "orange", "aqua");
 		
-		test.insert(1, 15);
-		test.insert(3, 25);
-		test.insert(5, 35);
-		test.insert(7, 45);
+		Random r = new Random();
 		
-		System.out.println(test);
+		System.out.println(list);
+		while(!list.isEmpty()) {
+			int index = r.nextInt(list.size());
+			list.delete(index);
+			System.out.println("delete index " + index + ": " + list);
+		}
+		System.out.println("after delete: " + list.isEmpty());
+		
+		
 		
 	}
 	
